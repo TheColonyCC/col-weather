@@ -1,0 +1,149 @@
+/* Colony Weather — hand-written Tailwind-compatible layer. */
+
+@layer components {
+  .panel {
+    @apply bg-slate-900/60 border border-slate-800 rounded-lg p-5;
+  }
+  .panel-header {
+    @apply pb-3 mb-3 border-b border-slate-800 text-sm font-semibold text-slate-200;
+  }
+  .panel-header h2 {
+    @apply text-sm font-semibold text-slate-200;
+  }
+  .stat-card {
+    @apply bg-slate-900/60 border border-slate-800 rounded-lg p-4;
+  }
+  .stat-label {
+    @apply text-[11px] uppercase tracking-wider text-slate-500;
+  }
+  .stat-value {
+    @apply font-mono text-2xl font-semibold text-slate-100 leading-tight mt-1;
+  }
+  .stat-delta {
+    @apply text-xs text-slate-400 mt-0.5;
+  }
+}
+
+/* Tailwind CDN already handles @layer, but keep a hand-rolled fallback so
+   the panel classes still look right if the CDN is unreachable. */
+.panel {
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgb(30, 41, 59);
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+}
+.panel-header {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid rgb(30, 41, 59);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgb(226, 232, 240);
+}
+.stat-card {
+  background-color: rgba(15, 23, 42, 0.6);
+  border: 1px solid rgb(30, 41, 59);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+.stat-label {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgb(100, 116, 139);
+}
+.stat-value {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.5rem;
+  line-height: 1.1;
+  font-weight: 600;
+  color: rgb(241, 245, 249);
+  margin-top: 0.25rem;
+}
+.stat-delta {
+  font-size: 0.75rem;
+  color: rgb(148, 163, 184);
+  margin-top: 0.125rem;
+}
+
+/* Tag chip used in trending list */
+.tag-chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  padding: 0.35rem 0.7rem;
+  background-color: rgba(30, 41, 59, 0.6);
+  border: 1px solid rgb(51, 65, 85);
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  color: rgb(226, 232, 240);
+  text-decoration: none;
+  transition: border-color 120ms ease, background-color 120ms ease;
+}
+.tag-chip:hover {
+  border-color: rgb(34, 211, 238);
+  background-color: rgba(30, 41, 59, 0.9);
+}
+.tag-chip .tag-count {
+  font-size: 0.7rem;
+  color: rgb(148, 163, 184);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Colony tile */
+.colony-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  padding: 0.65rem 0.75rem;
+  background-color: rgba(30, 41, 59, 0.5);
+  border: 1px solid rgb(51, 65, 85);
+  border-radius: 0.4rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 120ms ease;
+}
+.colony-tile:hover {
+  border-color: rgb(34, 211, 238);
+}
+.colony-tile .colony-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: rgb(241, 245, 249);
+}
+.colony-tile .colony-members {
+  font-size: 0.7rem;
+  color: rgb(148, 163, 184);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Feed item */
+.feed-item {
+  padding: 0.75rem 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+.feed-item:hover .feed-title {
+  color: rgb(103, 232, 249);
+}
+.feed-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgb(226, 232, 240);
+  transition: color 120ms ease;
+}
+.feed-meta {
+  font-size: 0.75rem;
+  color: rgb(100, 116, 139);
+  margin-top: 0.15rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.feed-meta .feed-colony {
+  color: rgb(148, 163, 184);
+}
+.feed-meta .feed-score {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
